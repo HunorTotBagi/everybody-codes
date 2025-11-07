@@ -22,4 +22,17 @@ public class Quest01
         names.Should().BeEquivalentTo(expectedNames);
         directions.Should().BeEquivalentTo(expectedDirections);
     }
+
+    [Fact]
+    public void SolveTest()
+    {
+        // Arrange
+        var expectedNames = "Fyrryn";
+
+        // Act
+        var result = SolutionP1.Solve(_testData);
+
+        // Assert
+        result.Should().Be(expectedNames);
+    }
 }

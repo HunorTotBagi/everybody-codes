@@ -1,5 +1,4 @@
-﻿
-namespace Src.Quest01;
+﻿namespace Src.Quest01;
 
 public class SolutionP1
 {
@@ -19,17 +18,21 @@ public class SolutionP1
 
         foreach (var move in listOfMoves)
         {
-            distance = move[1];
+            distance = move[1] - '0';
             if (move[0] == 'R')
             {
                 i += distance;
-                if (i > listOfNames.Length)
-                    i = listOfNames.Length;
+                if (i > listOfNames.Length - 1)
+                    i = listOfNames.Length - 1;
+            }
+            else
+            {
+                i -= distance;
+                if (i < 0)
+                    i = 0;
             }
 
-            i -= distance;
-            if (i < 0)
-                i = 0;
+
         }
 
         return listOfNames[i];
