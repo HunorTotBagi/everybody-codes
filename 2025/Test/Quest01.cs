@@ -6,31 +6,20 @@ namespace Test;
 
 public class Quest01
 {
-    [Fact]
-    public void Test1()
-    {
-        // Arrange
-        var names = "Ardenisis,Grimindor,Silirin,Quorthyn,Kalxeth,Xildar,Kharpyr,Hyracion,Thyrosdaros,Havoris";
-        var moves = "L9,R1,L5,R9,L1,R3,L2,R9,L9,R4,L6";
-
-        // Act
-        var result = SolutionP1.Solve(names, moves);
-
-        // Assert
-        result.Should().Be("Ardenisis");
-    }
+    private readonly string _testData = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData.txt";
 
     [Fact]
-    public void Test2()
+    public void ReadNames()
     {
         // Arrange
-        var names = "Ardenisis,Grimindor,Silirin,Quorthyn,Kalxeth,Xildar,Kharpyr,Hyracion,Thyrosdaros,Havoris";
-        var moves = "L9,R1,L5,R9,L1,R3,L2,R9,L9,R4,L6";
+        var expectedNames = new[] { "Vyrdax","Drakzyph","Fyrryn","Elarzris" };
+        var expectedDirections = new[] { "R3", "L2", "R3", "L1" };
 
         // Act
-        var result = SolutionP2.Solve(names, moves);
+        var (names, directions) = SolutionP1.ReadNamesAndDirections(_testData);
 
         // Assert
-        result.Should().Be("Ardenisis");
+        names.Should().BeEquivalentTo(expectedNames);
+        directions.Should().BeEquivalentTo(expectedDirections);
     }
 }
