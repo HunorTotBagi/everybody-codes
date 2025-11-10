@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Test;
 
-public class Quest01
+public class Quest01Test
 {
     private readonly string _testData1 = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData1.txt";
     private readonly string _testData2 = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData2.txt";
