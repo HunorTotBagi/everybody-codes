@@ -54,10 +54,11 @@ public class Quest04Test
     public void CalculateTest3()
     {
         // Arrange
+        var turns = 10000000000000;
         var expected = 625000000000;
 
         // Act
-        var result = SolutionP2.Calculate(_testData1);
+        var result = SolutionP2.Calculate(_testData1, turns);
 
         // Assert
         result.Should().Be(expected);
@@ -67,10 +68,11 @@ public class Quest04Test
     public void CalculateTest4()
     {
         // Arrange
+        var turns = 10000000000000;
         var expected = 1274509803922;
 
         // Act
-        var result = SolutionP2.Calculate(_testData2);
+        var result = SolutionP2.Calculate(_testData2, turns);
 
         // Assert
         result.Should().Be(expected);
