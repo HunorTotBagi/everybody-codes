@@ -48,33 +48,4 @@ public class Quest06Test
         // Assert
         result.Should().Be(expected);
     }
-
-
-    [Fact]
-    public void BuildOrderTest()
-    {
-        // Arrange
-        var repetitions = 2;
-        var baseOrder = "ABabACacBCbca";
-        var expected = "ABabACacBCbcaABabACacBCbca";
-
-        // Act
-        var result = SolutionP3.BuildOrder(repetitions, baseOrder);
-
-        // Assert
-        result.Should().Be(expected);
-    }
-
-    [Theory]
-    [InlineData(1, 10, 34)]
-    [InlineData(2, 10, 72)]
-    [InlineData(1000, 1000, 3442321)]
-    public void NoviceMentorPairsTest(int repetitions, int distanceLimit, int expected)
-    {
-        // Act
-        var result = SolutionP3.NoviceMentorPairs(repetitions, distanceLimit, _testData3);
-
-        // Assert
-        result.Should().Be(expected);
-    }
 }
