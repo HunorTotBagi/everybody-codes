@@ -7,6 +7,7 @@ namespace Test;
 public class Quest01Tests
 {
     private readonly string _testData1 = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData1.txt";
+    private readonly string _testData2 = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData2.txt";
 
     [Fact]
     public void ReadData()
@@ -45,13 +46,26 @@ public class Quest01Tests
     }
 
     [Fact]
-    public void CalculateTest()
+    public void CalculateP1Test()
     {
         // Arrange
         var expected = 9166;
 
         // Act
         var result = SolutionP1.Calculate(_testData1);
+
+        // Assert
+        result.Should().Be(expected);
+    }
+
+    [Fact]
+    public void CalculateP2Test()
+    {
+        // Arrange
+        var expected = 2456;
+
+        // Act
+        var result = SolutionP2.Calculate(_testData2);
 
         // Assert
         result.Should().Be(expected);
