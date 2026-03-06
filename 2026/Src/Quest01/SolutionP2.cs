@@ -18,11 +18,10 @@ public class SolutionP2
         }
 
         double max = -1;
+
         foreach (var value in calculatedValues)
-        {
             if (value[2] > max)
                 max = value[2];
-        }
 
         var candidates = new List<double[]>();
 
@@ -34,13 +33,11 @@ public class SolutionP2
         var finalResult = candidates[0][0];
 
         foreach (var candidate in candidates)
-        {
             if (candidate[1] < min)
             {
                 finalResult = candidate[0];
                 min = candidate[1];
             }
-        }
 
         return finalResult;
     }
