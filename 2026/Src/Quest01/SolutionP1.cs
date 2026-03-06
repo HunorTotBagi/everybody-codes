@@ -29,13 +29,10 @@ public class SolutionP1
         for (var i = length - 1; i >= 0; i--)
         {
             if (char.IsUpper(input[i]))
-            {
                 result += Math.Pow(2, power);
-            }
                 
             power++;
         }
-
 
         return result;
     }
