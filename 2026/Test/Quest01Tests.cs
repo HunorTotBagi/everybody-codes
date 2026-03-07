@@ -8,6 +8,7 @@ public class Quest01Tests
 {
     private readonly string _testData1 = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData1.txt";
     private readonly string _testData2 = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData2.txt";
+    private readonly string _testData3 = AppDomain.CurrentDomain.BaseDirectory + "../../../../Src/Quest01/testData3.txt";
 
     [Fact]
     public void ReadData()
@@ -66,6 +67,19 @@ public class Quest01Tests
 
         // Act
         var result = SolutionP2.Calculate(_testData2);
+
+        // Assert
+        result.Should().Be(expected);
+    }
+
+    [Fact]
+    public void CalculateP3Test()
+    {
+        // Arrange
+        var expected = 292320;
+
+        // Act
+        var result = SolutionP3.Calculate(_testData3);
 
         // Assert
         result.Should().Be(expected);
